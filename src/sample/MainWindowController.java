@@ -3,13 +3,10 @@ package sample;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
-import org.controlsfx.control.spreadsheet.Grid;
-
 import java.util.ArrayList;
 import java.util.Optional;
 

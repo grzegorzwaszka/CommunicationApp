@@ -1,7 +1,6 @@
 package sample;
 
-import javafx.geometry.HPos;
-import javafx.geometry.Pos;
+
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.util.Callback;

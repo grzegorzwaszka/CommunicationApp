@@ -94,24 +94,29 @@ public class Server {
                 if(key.isReadable()){
                     System.out.println("Reciving message");
                     ByteBuffer bb =  ByteBuffer.allocate(5000);
-                    ((SocketChannel)key.channel()).read(bb);
-                    bb.flip();
-                    String message = charset.decode(bb).toString();
-                    System.out.println("Message recieved: " + message);
-                    System.out.println("Handling message" );
-                    switch(message.split(":")[0]) {
-                        case "GET":
-                            handler.get(message, key);
-                            break;
-                        case "HELP":
-                            handler.help(message, key);
-                            break;
-                        case "RESPONSE":
-                            handler.response(message, key);
-                            break;
-                        case "CONNECT":
-                            handler.connect(message,key);
-                            break;
+                    try {
+                        ((SocketChannel) key.channel()).read(bb);
+                        bb.flip();
+                        String message = charset.decode(bb).toString();
+                        System.out.println("Message recieved: " + message);
+                        System.out.println("Handling message");
+                        switch (message.split(":")[0]) {
+                            case "GET":
+                                handler.get(message, key);
+                                break;
+                            case "HELP":
+                                handler.help(message, key);
+                                break;
+                            case "RESPONSE":
+                                handler.response(message, key);
+                                break;
+                            case "CONNECT":
+                                handler.connect(message, key);
+                                break;
+                        }
+                    }catch(IOException ex) {
+                        System.out.println("User disconnected");
+                        key.cancel();
                     }
                 }
             }
