@@ -32,6 +32,10 @@
                      </VBox.margin>
 
                   </Button>
+                  <Button mnemonicParsing="false" onMouseEntered="#changeOpacity" onMouseExited="#changeOpacity" style="-fx-background-color: rgb(0, 122, 45);" text="INFO" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="8.0" />
+                     </VBox.margin></Button>
                </children></VBox>
             <Label fx:id="UsernameLabel" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
@@ -61,6 +65,36 @@
                   <Font name="Kokonor Regular" size="20.0" />
                </font>
             </Label>
+            <VBox fx:id="InfoVbox" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgb(0, 122, 45);" visible="false" GridPane.columnIndex="1" GridPane.rowSpan="3">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="UsernameLabe" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Nazwa Użytkownika:" textFill="WHITE" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Kokonor Regular" size="13.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="UniversityLabe" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Uczelnia" textFill="WHITE" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin></Label>
+                     </children>
+                  </GridPane>
+               </children></VBox>
          </children>
       </GridPane>
    </children>

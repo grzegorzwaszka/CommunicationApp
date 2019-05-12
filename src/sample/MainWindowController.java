@@ -12,6 +12,12 @@ import java.util.Optional;
 
 public class MainWindowController {
     @FXML
+    Label UniversityLabe;
+    @FXML
+    Label UsernameLabe;
+    @FXML
+    VBox InfoVbox;
+    @FXML
     VBox ResponseVbox;
     @FXML
     VBox InboxVbox;
@@ -47,6 +53,21 @@ public class MainWindowController {
             InboxVbox.setSpacing(10);
             ResponseVbox.getChildren().add(inboxRequest);
         });
+    }
+    public void changeOpacity()
+    {
+        if(InfoVbox.isVisible())
+        {
+            InfoVbox.setVisible(false);
+        }
+        else
+        {
+            UniversityLabe.setText(client.nazwa);
+            UsernameLabe.setText(client.uczelnia);
+            InfoVbox.setVisible(true);
+
+        }
+
     }
     public void displayDialogPane()
     {
